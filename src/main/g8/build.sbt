@@ -1,4 +1,4 @@
-import Dependencies._
+lazy val ScalaTestVersion  = "3.0.5"
 
 lazy val root = (project in file(".")).
   settings(
@@ -8,5 +8,7 @@ lazy val root = (project in file(".")).
       version      := "0.1.0-SNAPSHOT"
     )),
     name := "$name$",
-    libraryDependencies += scalaTest % Test
+    libraryDependencies ++= Seq(
+      "org.scalatest" %% "scalatest" % ScalaTestVersion % Test,
+    )
   )
